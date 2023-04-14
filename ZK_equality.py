@@ -1,6 +1,9 @@
 from zksk import Secret, DLRep, utils
 #from zksk import utils
 
+# Define the secret bit
+top_secret_bit = 1
+
 def ZK_equality(G,H):
 
     #Generate two El-Gamal ciphertexts (C1,C2) and (D1,D2)
