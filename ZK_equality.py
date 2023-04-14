@@ -1,5 +1,5 @@
 from zksk import Secret, DLRep
-from zksk import utils,
+from zksk import utils
 
 def ZK_equality(G,H):
 
