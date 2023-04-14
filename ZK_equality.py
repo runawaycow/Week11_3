@@ -1,5 +1,7 @@
-
 from zksk import Secret, DLRep, utils
+
+# Define the secret bit
+top_secret_bit = Secret(1)
 
 def ZK_equality(G, H):
     # Generate two random secrets r1, r2 and a random message
@@ -18,9 +20,6 @@ def ZK_equality(G, H):
 
     # Generate a random challenge value
     challenge = Secret(utils.get_random_num(bits=256))
-
-    # This is Peggy's secret bit.
-    top_secret_bit = 1
 
     # Calculate the responses
     s1 = r1 + challenge * top_secret_bit
