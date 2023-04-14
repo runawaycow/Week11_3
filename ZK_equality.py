@@ -19,8 +19,11 @@ def ZK_equality(G,H):
 
     # Create the NIZK proof
     stmt = DLRep(C1, r1 * G) & DLRep(C2, r1 * H + m * G) & DLRep(D1, r2 * G) & DLRep(D2, r2 * H + m * G)
-    zk_proof = ZKProof(G, H)
-    zk_proof.prove(stmt)
+    #zk_proof = ZKProof(G, H)
+    zk_proof = zkay.prove(stmt, prover_id="prover1")
+
+    # Verify the NIZK proof
+    assert zkay.verify(zk_proof, stmt, verifier_id="verifier1")
 
 
     #Return two ciphertexts and the proof
