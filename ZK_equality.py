@@ -26,9 +26,9 @@ def ZK_equality(G, H):
 
     # Calculate the responses
     s1 = r1 + (challenge * top_secret_bit)
-    s2 = r2 + (challenge * (r - top_secret_bit)
-    s3 = m + (challenge * top_secret_bit * (r - top_secret_bit)
-        
+    s2 = r2 + (challenge * (r - top_secret_bit))
+    s3 = m + (challenge * top_secret_bit * (r - top_secret_bit))
+
     # Verify the proof
     lhs1 = s1.value * G
     rhs1 = C1 + challenge.value * G
