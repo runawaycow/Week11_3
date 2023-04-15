@@ -18,16 +18,18 @@ def ZK_equality(G, H):
     # Create the NIZK proof
     stmt = DLRep(C1, r1 * G) & DLRep(C2, r1 * H + m * G) & DLRep(D1, r2 * G) & DLRep(D2, r2 * H + m * G)
 
+    zk_proof = stmt.prove()
+
     # Generate a random challenge value
-    challenge = Secret(utils.get_random_num(bits=256))
+    #Schallenge = Secret(utils.get_random_num(bits=256))
     # Setup: define a randomizer with an unknown value.
-    r = Secret(1)
-    print(r)
+    #r = Secret(1)
+    #print(r)
 
     # Calculate the responses
-    s1 = r1.value + (challenge.value * top_secret_bit)
-    s2 = r2.value + (challenge.value * (r.value - top_secret_bit))
-    s3 = m.value + (challenge.value * top_secret_bit.value * (r.value - top_secret_bit))
+    #s1 = r1.value + (challenge.value * top_secret_bit)
+    #s2 = r2.value + (challenge.value * (r.value - top_secret_bit))
+    #s3 = m.value + (challenge.value * top_secret_bit.value * (r.value - top_secret_bit))
 
     # Verify the proof
     #lhs1 = s1.value * G
