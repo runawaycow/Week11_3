@@ -49,7 +49,7 @@ def ZK_equality(G, H):
     #assert lhs4 == rhs4
 
     # Create the NIZK proof
-    zk_proof = stmt.prove(challenge)
+    #zk_proof = stmt.prove(challenge)
 
     # Return the ciphertexts and the proof
     return (C1, C2), (D1, D2), zk_proof
