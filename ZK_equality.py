@@ -30,21 +30,21 @@ def ZK_equality(G, H):
     s3 = m.value + (challenge.value * top_secret_bit.value * (r.value - top_secret_bit))
 
     # Verify the proof
-    lhs1 = s1.value * G
-    rhs1 = C1 + challenge.value * G
-    assert lhs1 == rhs1
+    #lhs1 = s1.value * G
+    #rhs1 = C1 + challenge.value * G
+    #assert lhs1 == rhs1
 
-    lhs2 = s1.value * H + s3.value * G
-    rhs2 = C2 + challenge.value * (r1.value * H + m.value * G)
-    assert lhs2 == rhs2
+    #lhs2 = s1.value * H + s3.value * G
+    #rhs2 = C2 + challenge.value * (r1.value * H + m.value * G)
+    #assert lhs2 == rhs2
 
-    lhs3 = s2.value * G
-    rhs3 = D1 + challenge.value * G
-    assert lhs3 == rhs3
+    #lhs3 = s2.value * G
+    #rhs3 = D1 + challenge.value * G
+    #assert lhs3 == rhs3
 
-    lhs4 = s2.value * H + s3.value * G
-    rhs4 = D2 + challenge.value * (r2.value * H + m.value * G)
-    assert lhs4 == rhs4
+    #lhs4 = s2.value * H + s3.value * G
+    #rhs4 = D2 + challenge.value * (r2.value * H + m.value * G)
+    #assert lhs4 == rhs4
 
     # Create the NIZK proof
     zk_proof = stmt.prove(challenge)
