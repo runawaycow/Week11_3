@@ -22,9 +22,9 @@ def ZK_equality(G, H):
     challenge = Secret(utils.get_random_num(bits=256))
 
     # Calculate the responses
-    s1 = r1 + challenge * top_secret_bit.value
-    s2 = r2 + challenge * (Secret(1) - top_secret_bit).value
-    s3 = m + challenge * (top_secret_bit * (Secret(1) - top_secret_bit)).value
+    s1 = r1 + (challenge * top_secret_bit).value
+    s2 = r2 + (challenge * (Secret(1) - top_secret_bit).value)
+    s3 = m + (challenge * (top_secret_bit * (Secret(1) - top_secret_bit)).value)
 
     # Verify the proof
     lhs1 = s1.value * G
